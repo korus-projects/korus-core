@@ -10,9 +10,6 @@ buildNumber.properties
 .mvn/timing.properties
 .mvn/wrapper/maven-wrapper.jar
 
-# Flattened POMs
-.flattened-pom.xml
-
 # IDEs
 .idea/
 *.iml

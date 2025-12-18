@@ -8,7 +8,7 @@
     <parent>
         <groupId>io.korus</groupId>
         <artifactId>korus-core</artifactId>
-        <version>${revision}</version>
+        <version>1.0.0-SNAPSHOT</version>
     </parent>
 
     <artifactId>bom</artifactId>
@@ -30,9 +30,6 @@
         <!-- Logging -->
         <slf4j.version>2.0.7</slf4j.version>
         <logback.version>1.4.11</logback.version>
-
-        <!-- Utilities -->
-        <guava.version>31.1-jre</guava.version>
 
         <!-- Annotations -->
         <annotations.version>24.0.0</annotations.version>
@@ -125,11 +122,6 @@
                 <scope>runtime</scope>
             </dependency>
 
-            <dependency>
-                <groupId>com.google.guava</groupId>
-                <artifactId>guava</artifactId>
-                <version>${guava.version}</version>
-            </dependency>
 
             <dependency>
                 <groupId>org.jetbrains</groupId>

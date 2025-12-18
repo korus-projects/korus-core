@@ -6,15 +6,13 @@
 
     <groupId>io.korus</groupId>
     <artifactId>korus-parent</artifactId>
-    <version>${revision}</version>
+    <version>1.0.0-SNAPSHOT</version>
     <packaging>pom</packaging>
 
     <name>Korus Parent</name>
     <description>Parent POM for all Korus framework modules - provides build configuration and plugin management</description>
 
     <properties>
-        <revision>1.0.0-SNAPSHOT</revision>
-
         <!-- Java version -->
         <java.version>17</java.version>
         <maven.compiler.source>${java.version}</maven.compiler.source>
@@ -29,7 +27,6 @@
         <maven-javadoc-plugin.version>3.10.1</maven-javadoc-plugin.version>
         <maven-jar-plugin.version>3.4.1</maven-jar-plugin.version>
         <maven-resources-plugin.version>3.3.1</maven-resources-plugin.version>
-        <flatten-maven-plugin.version>1.6.0</flatten-maven-plugin.version>
 
         <!-- Build control -->
         <skip.javadoc>false</skip.javadoc>
@@ -42,7 +39,7 @@
             <dependency>
                 <groupId>io.korus</groupId>
                 <artifactId>bom</artifactId>
-                <version>${revision}</version>
+                <version>${project.version}</version>
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
@@ -125,33 +122,6 @@
                         </execution>
                     </executions>
                 </plugin>
-
-                <!-- Flatten POM for CI-friendly versions -->
-                <plugin>
-                    <groupId>org.codehaus.mojo</groupId>
-                    <artifactId>flatten-maven-plugin</artifactId>
-                    <version>${flatten-maven-plugin.version}</version>
-                    <configuration>
-                        <flattenMode>resolveCiFriendliesOnly</flattenMode>
-                        <updatePomFile>true</updatePomFile>
-                    </configuration>
-                    <executions>
-                        <execution>
-                            <id>flatten</id>
-                            <phase>process-resources</phase>
-                            <goals>
-                                <goal>flatten</goal>
-                            </goals>
-                        </execution>
-                        <execution>
-                            <id>flatten-clean</id>
-                            <phase>clean</phase>
-                            <goals>
-                                <goal>clean</goal>
-                            </goals>
-                        </execution>
-                    </executions>
-                </plugin>
             </plugins>
         </pluginManagement>
 
@@ -165,11 +135,6 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-javadoc-plugin</artifactId>
-            </plugin>
-
-            <plugin>
-                <groupId>org.codehaus.mojo</groupId>
-                <artifactId>flatten-maven-plugin</artifactId>
             </plugin>
         </plugins>
     </build>

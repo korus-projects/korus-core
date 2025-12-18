@@ -6,14 +6,14 @@
 
     <groupId>io.korus</groupId>
     <artifactId>korus-core</artifactId>
-    <version>${revision}</version>
+    <version>1.0.0-SNAPSHOT</version>
     <packaging>pom</packaging>
 
     <name>Korus Core Parent</name>
     <description>Reactor aggregator for the Korus DI Framework - builds all framework modules</description>
 
     <properties>
-        <revision>1.0.0-SNAPSHOT</revision>
+        <korus.version>1.0.0-SNAPSHOT</korus.version>
     </properties>
 
     <modules>
