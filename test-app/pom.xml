@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <!-- Use Korus Build Parent -->
+    <parent>
+        <groupId>io.korus</groupId>
+        <artifactId>korus-build-parent</artifactId>
+        <version>1.0.0-SNAPSHOT</version>
+        <relativePath>../korus-build-parent</relativePath>
+    </parent>
+
+    <artifactId>test-app</artifactId>
+
+    <name>Korus Test Application</name>
+    <description>
+        End-user test application demonstrating how to use Korus framework.
+        This module simulates a real user project and validates the entire framework setup.
+    </description>
+
+    <properties>
+        <!-- This module is for testing, not distribution -->
+        <skip.javadoc>true</skip.javadoc>
+        <skip.sources>true</skip.sources>
+        
+        <!-- Enable verbose processor logging for validation -->
+        <korus.processing.verbose>true</korus.processing.verbose>
+    </properties>
+
+    <dependencies>
+        <!-- Starter -->
+        <dependency>
+            <groupId>io.korus</groupId>
+            <artifactId>core-starter</artifactId>
+        </dependency>
+
+        <!-- Logging implementation -->
+        <dependency>
+            <groupId>ch.qos.logback</groupId>
+            <artifactId>logback-classic</artifactId>
+        </dependency>
+
+        <!-- Testing -->
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter</artifactId>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <compilerArgs>
+                        <arg>-Akorus.processing.incremental=${korus.processing.incremental}</arg>
+                        <arg>-Akorus.processing.verbose=${korus.processing.verbose}</arg>
+                        <arg>-Xlint:all</arg>
+                        <arg>-Xlint:-processing</arg>
+                    </compilerArgs>
+                    <showWarnings>true</showWarnings>
+                    <verbose>false</verbose>
+                </configuration>
+            </plugin>
+            
+            <!-- Ensure we can run the application -->
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>exec-maven-plugin</artifactId>
+                <version>3.1.1</version>
+                <configuration>
+                    <mainClass>io.korus.test.TestApplication</mainClass>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+</project>

@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>io.korus</groupId>
+        <artifactId>korus-parent</artifactId>
+        <version>${revision}</version>
+        <relativePath>../korus-parent</relativePath>
+    </parent>
+
+    <artifactId>core-starter</artifactId>
+
+    <name>Korus Core Starter</name>
+    <description>Starter aggregator module - Provides all essential Korus dependencies for user applications (API + runtime)</description>
+
+    <properties>
+        <!-- Starter modules don't generate sources or javadoc -->
+        <skip.javadoc>true</skip.javadoc>
+        <skip.sources>true</skip.sources>
+    </properties>
+
+    <dependencies>
+        <!-- API modules -->
+        <dependency>
+            <groupId>io.korus</groupId>
+            <artifactId>inject</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>io.korus</groupId>
+            <artifactId>inject-java</artifactId>
+        </dependency>
+
+        <!-- Core utilities -->
+        <dependency>
+            <groupId>io.korus</groupId>
+            <artifactId>core</artifactId>
+        </dependency>
+
+        <!-- Runtime infrastructure -->
+        <dependency>
+            <groupId>io.korus</groupId>
+            <artifactId>context</artifactId>
+        </dependency>
+
+        <!-- Note: Logging implementation is NOT included - users must choose their own -->
+    </dependencies>
+
+</project>
+

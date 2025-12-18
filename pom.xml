@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>io.korus</groupId>
+    <artifactId>korus-core</artifactId>
+    <version>${revision}</version>
+    <packaging>pom</packaging>
+
+    <name>Korus Core Parent</name>
+    <description>Reactor aggregator for the Korus DI Framework - builds all framework modules</description>
+
+    <properties>
+        <revision>1.0.0-SNAPSHOT</revision>
+    </properties>
+
+    <modules>
+        <module>korus-parent</module>
+        <module>korus-build-parent</module>
+        <module>bom</module>
+        <module>inject</module>
+        <module>inject-java</module>
+        <module>core</module>
+        <module>core-processor</module>
+        <module>context</module>
+        <module>core-starter</module>
+        <module>test-app</module>
+    </modules>
+
+</project>
