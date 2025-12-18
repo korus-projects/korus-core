@@ -1,4 +1,4 @@
-package test;
+package io.korus.test;
 
 public class TestController {
 

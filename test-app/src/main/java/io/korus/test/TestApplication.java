@@ -1,4 +1,4 @@
-package test;
+package io.korus.test;
 
 public final class TestApplication {
     public static void main(String[] args) {
