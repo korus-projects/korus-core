@@ -29,9 +29,12 @@ jobs:
         uses: github/codeql-action/init@v4
         with:
           languages: java-kotlin
+          
+      - name: Install Parent POM
+        run: mvn -B -ntp install -N -DskipTests
 
       - name: Build with Maven (manual)
-        run: mvn -B -ntp clean compile
+        run: mvn -B -ntp clean install -DskipTests
 
       - name: Perform CodeQL Analysis
         uses: github/codeql-action/analyze@v4
