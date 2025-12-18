@@ -1,0 +1,34 @@
+name: Greetings
+
+on: [pull_request_target, issues]
+
+jobs:
+  greeting:
+    runs-on: ubuntu-latest
+    permissions:
+      issues: write
+      pull-requests: write
+    steps:
+      - uses: actions/first-interaction@v1
+        with:
+          repo-token: ${{ secrets.GITHUB_TOKEN }}
+          issue-message: |
+            👋 Hi there, and welcome to **Korus**!
+
+            Thanks for opening your first issue.  
+            Please make sure the issue clearly describes:
+            - the problem you’re facing
+            - expected vs actual behavior
+            - relevant logs or minimal examples (if applicable)
+
+            We appreciate your interest in Korus
+
+          pr-message: |
+            Welcome to **Korus**, and thanks for your first Pull Request!
+
+            A few quick notes before we review:
+            - Please ensure the build and checks pass
+            - Make sure you’ve signed the **CLA** (the bot will guide you if needed)
+            - Keep changes focused and well-described
+
+            Our CI will automatically validate your changes.
