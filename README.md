@@ -2,7 +2,7 @@
 
 [![Build Status](https://img.shields.io/badge/build-passing-brightgreen)]()
 [![License](https://img.shields.io/badge/license-Apache%202.0-blue.svg)](LICENSE)
-[![Java Version](https://img.shields.io/badge/java-17%2B-orange.svg)]()
+[![Java Version](https://img.shields.io/badge/java-25%2B-orange.svg)]()
 
 
 A modern, high-performance dependency injection framework for Java.
@@ -54,7 +54,7 @@ mvn dependency:tree -pl <module-name>
 ```
 
 ## Requirements
-- **Java**: 17 or higher
+- **Java**: 25 or higher
 - **Maven**: 3.8.0 or higher
 - **Build Tool**: Maven
 
