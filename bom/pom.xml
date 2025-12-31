@@ -19,8 +19,9 @@
 
     <properties>
         <!-- Build-time tools -->
-        <gizmo.version>1.8.0</gizmo.version>
-        <jandex.version>3.1.2</jandex.version>
+        <gizmo.version>2.0.0</gizmo.version>
+        <RoaringBitmap.version>1.3.0</RoaringBitmap.version>
+        <jandex.version>3.5.3</jandex.version>
         <auto-service.version>1.1.1</auto-service.version>
 
         <!-- Jakarta APIs -->
@@ -28,15 +29,15 @@
         <jakarta.annotation.version>2.1.1</jakarta.annotation.version>
 
         <!-- Logging -->
-        <slf4j.version>2.0.7</slf4j.version>
-        <logback.version>1.4.11</logback.version>
+        <slf4j.version>2.0.17</slf4j.version>
+        <logback.version>1.5.23</logback.version>
 
         <!-- Annotations -->
         <annotations.version>24.0.0</annotations.version>
         <jspecify.version>1.0.0</jspecify.version>
 
         <!-- Testing -->
-        <junit.version>5.10.2</junit.version>
+        <junit.version>6.0.0</junit.version>
     </properties>
 
     <dependencyManagement>
@@ -74,8 +75,13 @@
             </dependency>
             <dependency>
                 <groupId>io.quarkus.gizmo</groupId>
-                <artifactId>gizmo</artifactId>
+                <artifactId>gizmo2</artifactId>
                 <version>${gizmo.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.roaringbitmap</groupId>
+                <artifactId>RoaringBitmap</artifactId>
+                <version>${RoaringBitmap.version}</version>
             </dependency>
 
             <!-- Class/annotation indexing -->
@@ -121,7 +127,6 @@
                 <version>${logback.version}</version>
                 <scope>runtime</scope>
             </dependency>
-
 
             <dependency>
                 <groupId>org.jetbrains</groupId>
