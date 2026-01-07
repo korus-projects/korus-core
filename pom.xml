@@ -24,6 +24,7 @@
         <module>inject-java</module>
         <module>core</module>
         <module>core-processor</module>
+        <module>http-vertx</module>
         <module>context</module>
         <module>core-starter</module>
         <module>test-app</module>
