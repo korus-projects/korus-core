@@ -2,7 +2,6 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0"
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-
     <modelVersion>4.0.0</modelVersion>
 
     <parent>
@@ -12,19 +11,17 @@
         <relativePath>../korus-parent</relativePath>
     </parent>
 
-    <artifactId>inject-java</artifactId>
+    <artifactId>http-server</artifactId>
+    <name>Korus HTTP Server</name>
+    <description>Parent module for HTTP server components - Aggregates REST abstractions, server implementation, and client modules</description>
 
-    <name>Korus Inject Java</name>
-    <description>Java-specific dependency injection annotations and extensions - API module extending inject</description>
+    <packaging>pom</packaging>
 
-    <dependencies>
+    <modules>
+        <module>rest-client</module>
+        <module>http-rest</module>
+        <module>http-vertx</module>
+    </modules>
 
-        <dependency>
-            <groupId>io.korus</groupId>
-            <artifactId>inject</artifactId>
-        </dependency>
-
-    </dependencies>
 
 </project>
-
