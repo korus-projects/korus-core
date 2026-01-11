@@ -24,7 +24,7 @@
         <!-- This module is for testing, not distribution -->
         <skip.javadoc>true</skip.javadoc>
         <skip.sources>true</skip.sources>
-        
+
         <!-- Enable verbose processor logging for validation -->
         <korus.processing.verbose>true</korus.processing.verbose>
     </properties>
@@ -56,7 +56,12 @@
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
                 <configuration>
+                    <fork>true</fork>
                     <compilerArgs>
+                        <!-- Pass enable-preview to the compiler JVM runtime -->
+                        <arg>-J--enable-preview</arg>
+                        <!-- Pass enable-preview to the compiler for source compilation -->
+                        <arg>--enable-preview</arg>
                         <arg>-Akorus.processing.incremental=${korus.processing.incremental}</arg>
                         <arg>-Akorus.processing.verbose=${korus.processing.verbose}</arg>
                         <arg>-Xlint:all</arg>
@@ -66,14 +71,26 @@
                     <verbose>false</verbose>
                 </configuration>
             </plugin>
-            
-            <!-- Ensure we can run the application -->
+
+            <!-- Configure Surefire to enable preview features for tests -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <configuration>
+                    <argLine>--enable-preview</argLine>
+                </configuration>
+            </plugin>
+
+            <!-- Ensure we can run the application with preview features -->
             <plugin>
                 <groupId>org.codehaus.mojo</groupId>
                 <artifactId>exec-maven-plugin</artifactId>
                 <version>3.1.1</version>
                 <configuration>
                     <mainClass>io.korus.test.TestApplication</mainClass>
+                    <arguments>
+                        <argument>--enable-preview</argument>
+                    </arguments>
                 </configuration>
             </plugin>
         </plugins>
