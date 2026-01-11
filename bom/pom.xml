@@ -27,6 +27,7 @@
         <!-- Jakarta APIs -->
         <jakarta.inject.version>2.0.1</jakarta.inject.version>
         <jakarta.annotation.version>2.1.1</jakarta.annotation.version>
+        <jakarta.ws.rs.version>3.1.0</jakarta.ws.rs.version>
 
         <!-- Logging -->
         <slf4j.version>2.0.17</slf4j.version>
@@ -50,11 +51,6 @@
             </dependency>
             <dependency>
                 <groupId>io.korus</groupId>
-                <artifactId>inject-java</artifactId>
-                <version>${project.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>io.korus</groupId>
                 <artifactId>core</artifactId>
                 <version>${project.version}</version>
             </dependency>
@@ -71,6 +67,11 @@
             <dependency>
                 <groupId>io.korus</groupId>
                 <artifactId>core-starter</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>io.korus</groupId>
+                <artifactId>http-rest</artifactId>
                 <version>${project.version}</version>
             </dependency>
             <dependency>
@@ -114,6 +115,12 @@
                 <groupId>jakarta.annotation</groupId>
                 <artifactId>jakarta.annotation-api</artifactId>
                 <version>${jakarta.annotation.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>jakarta.ws.rs</groupId>
+                <artifactId>jakarta.ws.rs-api</artifactId>
+                <version>${jakarta.ws.rs.version}</version>
+                <scope>provided</scope>
             </dependency>
 
             <dependency>

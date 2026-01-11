@@ -29,11 +29,6 @@
             <artifactId>inject</artifactId>
         </dependency>
 
-        <dependency>
-            <groupId>io.korus</groupId>
-            <artifactId>inject-java</artifactId>
-        </dependency>
-
         <!-- Core utilities -->
         <dependency>
             <groupId>io.korus</groupId>
